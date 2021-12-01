@@ -8,18 +8,20 @@ public class Timer : MonoBehaviour
 {
     public TMP_Text timer;
     public float timerNumber;
-    public bool timerOn = false;
+    public bool timerOn;
+    public GameObject start;
+    public GameObject finish;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        timerOn = false;   
     }
 
     // Update is called once per frame
-    private void Update()
+    public void Update()
     {
-        if (timerOn)
+        if (timerOn == true)
         {
             timerNumber += Time.deltaTime;
             timer.text = timerNumber.ToString();
@@ -30,13 +32,8 @@ public class Timer : MonoBehaviour
         }
     }
 
-    public void StartTimer()
+    private void OnTriggerEnter(Collider other)
     {
         timerOn = true;
-    }
-
-    public void EndTimer()
-    {
-
     }
 }

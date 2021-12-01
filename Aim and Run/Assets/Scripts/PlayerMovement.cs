@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [Range(1, 10)]
     public float speed = 10;
-    public float sprintingMultiplier = 12;
+    public float sprintingMultiplier = 10.2f;
     public float jumpSpeed;
 
     // Start is called before the first frame update
@@ -37,10 +37,6 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
             transform.Translate(Vector3.forward * sprintingMultiplier * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.Space))
-        {
-            transform.Translate(Vector3.up * Time.deltaTime);
         }
     }
 }
