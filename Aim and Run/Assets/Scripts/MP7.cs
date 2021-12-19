@@ -44,7 +44,6 @@ public class MP7 : MonoBehaviour
             {
                 shotTarget.TakeDamage(damage);
             }
-
             if(hit.rigidbody != null)
             {
                 hit.rigidbody.AddForce(-hit.normal * impactForce);
